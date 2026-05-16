@@ -215,28 +215,6 @@
   border-radius: 100px;
 }
 
-
-  /* ───── LANGUE BAR ───── */
-  .lang-bar {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 0 4px;
-  }
-  .lang-btn {
-    background: none;
-    border: 2.5px solid transparent;
-    border-radius: 6px;
-    padding: 2px;
-    cursor: pointer;
-    opacity: 0.4;
-    transition: all 0.2s;
-    pointer-events: all;
-  }
-  .lang-btn.active { opacity: 1; border-color: #5C2D1E; }
-  .lang-btn img { width: 32px; height: 22px; display: block; border-radius: 3px; }
-  body.rtl { direction: rtl; text-align: right; }
-  body.rtl .product { flex-direction: row-reverse; }
 </style>
 </head>
 <body>
@@ -247,14 +225,6 @@
      ══════════════════════════════════════ -->
 <div class="header">
   <img src="logo.png" alt="Luvi Coffee">
-  <div class="lang-bar">
-    <button class="lang-btn active" onclick="setLang('tr')"><img src="https://flagcdn.com/w40/tr.png" alt="TR"></button>
-    <button class="lang-btn" onclick="setLang('en')"><img src="https://flagcdn.com/w40/gb.png" alt="EN"></button>
-    <button class="lang-btn" onclick="setLang('de')"><img src="https://flagcdn.com/w40/de.png" alt="DE"></button>
-    <button class="lang-btn" onclick="setLang('ar')"><img src="https://flagcdn.com/w40/sa.png" alt="AR"></button>
-    <button class="lang-btn" onclick="setLang('ru')"><img src="https://flagcdn.com/w40/ru.png" alt="RU"></button>
-    <button class="lang-btn" onclick="setLang('fr')"><img src="https://flagcdn.com/w40/fr.png" alt="FR"></button>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════
@@ -262,16 +232,16 @@
      ══════════════════════════════════════ -->
 <nav class="nav-bar">
   <div class="nav-scroll">
-    <button class="nav-btn active" onclick="goTo('sicak')" data-key="cat_sicak">Sıcak İçecekler</button>
-    <button class="nav-btn" onclick="goTo('soguk')" data-key="cat_soguk">Soğuk İçecekler</button>
-    <button class="nav-btn" onclick="goTo('soft')" data-key="cat_soft">Soft İçecekler</button>
-    <button class="nav-btn" onclick="goTo('atistirmalik')" data-key="cat_atistirmalik">Atıştırmalıklar</button>
-    <button class="nav-btn" onclick="goTo('cay')" data-key="cat_cay">Çaylar</button>
-    <button class="nav-btn" onclick="goTo('pizza')" data-key="cat_pizza">Pizzalar</button>
-    <button class="nav-btn" onclick="goTo('tatli')" data-key="cat_tatli">Tatlılar</button>
-    <button class="nav-btn" onclick="goTo('kurabiye')" data-key="cat_kurabiye">Kurabiyeler</button>
-    <button class="nav-btn" onclick="goTo('salade')" data-key="cat_salatalar">Salatalar</button>
-    <button class="nav-btn" onclick="goTo('extras')" data-key="cat_extras">Extras</button>
+    <button class="nav-btn active" onclick="goTo('sicak')">Sıcak İçecekler</button>
+    <button class="nav-btn" onclick="goTo('soguk')">Soğuk İçecekler</button>
+    <button class="nav-btn" onclick="goTo('soft')">Soft İçecekler</button>
+    <button class="nav-btn" onclick="goTo('atistirmalik')">Atıştırmalıklar</button>
+    <button class="nav-btn" onclick="goTo('cay')">Çaylar</button>
+    <button class="nav-btn" onclick="goTo('pizza')">Pizzalar</button>
+    <button class="nav-btn" onclick="goTo('tatli')">Tatlılar</button>
+    <button class="nav-btn" onclick="goTo('kurabiye')">Kurabiyeler</button>
+    <button class="nav-btn" onclick="goTo('salade')">Salatalar</button>
+    <button class="nav-btn" onclick="goTo('extras')">Extras</button>
   </div>
 </nav>
 
@@ -282,12 +252,12 @@
 <section id="sicak" class="section">
 
   <img class="section-img" src="sicak/head_image.jpg" loading="lazy" alt="Sıcak İçecekler">
-  <div class="section-title" data-key="cat_sicak">Sıcak İçecekler</div>
+  <div class="section-title">Sıcak İçecekler</div>
 
   <!-- PRODUIT — copie ce bloc pour ajouter un produit -->
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="espresso">Espresso</div>
+      <div class="product-name">Espresso</div>
       <div class="product-price">₺120,00</div>
     </div>
     <img class="product-img" loading="lazy" src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=120&q=40" alt="Espresso">
@@ -295,7 +265,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="double_espresso">Double espresso</div>
+      <div class="product-name">Double espresso</div>
       <div class="product-price">₺170,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/double%20expresso.webp" alt="Double Espresso">
@@ -303,7 +273,7 @@
 
    <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="cortado">Cortado</div>
+      <div class="product-name">Cortado</div>
       <div class="product-price">₺180,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/cortado.webp" alt="Sıcak Çikolata">
@@ -311,7 +281,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="turk_kahvesi">Türk Kahvesi</div>
+      <div class="product-name">Türk Kahvesi</div>
       <div class="product-price">₺120,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Turk_Kahvesi.webp" alt="Turk Kahvesi">
@@ -319,7 +289,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="turk_kahvesi_double">Türk Kahvesi Double</div>
+      <div class="product-name">Türk Kahvesi Double</div>
       <div class="product-price">₺170,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Turk_Kahvesi.webp" alt="Turk Kahvesi Double">
@@ -327,7 +297,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="americano">Americano</div>
+      <div class="product-name">Americano</div>
       <div class="product-price">₺170,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Americano">
@@ -335,7 +305,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="americano_sutlu">Americano Sütlü</div>
+      <div class="product-name">Americano Sütlü</div>
       <div class="product-price">₺180,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Americano Sütlü">
@@ -343,7 +313,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="cappuccino">Cappuccino</div>
+      <div class="product-name">Cappuccino</div>
       <div class="product-price">₺190,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Capuccino.webp" alt="Cappuccino">
@@ -351,8 +321,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="vegan_sutlu">Vegan Sütlü Kahve</div>
-      <div class="product-desc" data-key="vegan_sutlu_desc">Badem sütü ,yulaf sütü veya hindistan cevizi sütü ile</div>
+      <div class="product-name">Vegan Sütlü Kahve</div>
+      <div class="product-desc">Badem sütü ,yulaf sütü veya hindistan cevizi sütü ile</div>
       <div class="product-price">₺240,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Vegan Sütlü Kahve">
@@ -360,7 +330,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="latte">Latte</div>
+      <div class="product-name">Latte</div>
       <div class="product-price">₺190,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte">
@@ -368,7 +338,7 @@
 
    <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="flat_white">Flat White</div>
+      <div class="product-name">Flat White</div>
       <div class="product-price">₺190,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte">
@@ -376,7 +346,7 @@
 
     <div class="product">
     <div class="product-info">
-       <div class="product-name" data-key="mocha">Mocha</div>
+       <div class="product-name">Mocha</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte">
@@ -384,7 +354,7 @@
 
    <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="aroma_latte">Aroma Latte</div>
+      <div class="product-name">Aroma Latte</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Aroma Latte">
@@ -392,7 +362,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="matcha_latte">Matcha Latte</div>
+      <div class="product-name">Matcha Latte</div>
       <div class="product-price">₺220,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Latte%20Matcha.webp" alt="Cappuccino">
@@ -400,7 +370,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="chai_latte">Chai Tea Latte</div>
+      <div class="product-name">Chai Tea Latte</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Chai%20latte.webp" alt="Chai Tea Latte">
@@ -408,7 +378,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="filtre_kahve">Filtre Kahve</div>
+      <div class="product-name">Filtre Kahve</div>
       <div class="product-price">₺150,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Filtre Kahve">
@@ -416,7 +386,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="sutlu_filtre">Sütlü Filtre Kahve</div>
+      <div class="product-name">Sütlü Filtre Kahve</div>
       <div class="product-price">₺160,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Sütlü Filtre Kahve">
@@ -424,7 +394,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="salep">Salep</div>
+      <div class="product-name">Salep</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Salep.webp" alt="Salep">
@@ -432,8 +402,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="sicak_cikolata">Sıcak Çikolata</div>
-      <div class="product-desc" data-key="sicak_cikolata_desc">Callebaut Belçika çikolatası ile hazırlanır. Krem şanti ile servis edilir</div>
+      <div class="product-name">Sıcak Çikolata</div>
+      <div class="product-desc">Callebaut Belçika çikolatası ile hazırlanır. Krem şanti ile servis edilir</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="sicak/Sicak%20çikolata.webp" alt="Sıcak Çikolata">
@@ -441,7 +411,7 @@
 
 
   <div class="extras-link" onclick="goTo('extras')">
-  <span data-key="extras_link">+ Ekstra shot, vegan süt, şurup →</span>
+  + Ekstra shot, vegan süt, şurup →
 </div>
 
 </section>
@@ -454,11 +424,11 @@
 <section id="soguk" class="section">
 
   <img class="section-img" src="soguk/head_soguk.jpg" alt="Soğuk İçecekler">
-  <div class="section-title" data-key="cat_soguk">Soğuk İçecekler</div>
+  <div class="section-title">Soğuk İçecekler</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ice_latte">İce Latte</div>
+      <div class="product-name">İce Latte</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Ice Latte">
@@ -466,7 +436,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ice_americano">İce Americano</div>
+      <div class="product-name">İce Americano</div>
       <div class="product-price">₺190,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/Americano.webp" alt="Iced Americano">
@@ -474,7 +444,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="cold_brew">Cold Brew</div>
+      <div class="product-name">Cold Brew</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/Americano.webp" alt="Cold Brew">
@@ -482,7 +452,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ice_mocha">İce Mocha</div>
+      <div class="product-name">İce Mocha</div>
       <div class="product-price">₺240,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/Ice%20mocha.webp" alt="Ice Mocha">
@@ -490,7 +460,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="frappe">Frappe</div>
+      <div class="product-name">Frappe</div>
       <div class="product-price">₺230,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/frappe.webp" alt="Iced Latte">
@@ -498,7 +468,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ice_matcha">İce Matcha</div>
+      <div class="product-name">İce Matcha</div>
       <div class="product-price">₺240,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/ice%20matcha.webp" alt="Iced Latte">
@@ -507,7 +477,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ice_strawberry_matcha">İce Strawberry Matcha</div>
+      <div class="product-name">İce Strawberry Matcha</div>
       <div class="product-price">₺240,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/İce Strawberry Matcha.webp" alt="Iced Latte">
@@ -515,7 +485,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ice_chai_latte">İce Chai Latte</div>
+      <div class="product-name">İce Chai Latte</div>
       <div class="product-price">₺230,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/İce%20Chai%20Latte.webp" alt="Iced Latte">
@@ -523,8 +493,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="milkshake">Milkshake</div>
-      <div class="product-desc" data-key="milkshake_desc">Çikolata ve çilek seçenekleri ile</div>
+      <div class="product-name">Milkshake</div>
+      <div class="product-desc">Çikolata ve çilek seçenekleri ile</div>
       <div class="product-price">₺250,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/milkshake.webp" alt="Iced Latte">
@@ -532,8 +502,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="frozen">Frozen</div>
-      <div class="product-desc" data-key="frozen_desc">Çilek,mango,muz,orman meyveleri seçenekleri ile</div>
+      <div class="product-name">Frozen</div>
+      <div class="product-desc">Çilek,mango,muz,orman meyveleri seçenekleri ile</div>
       <div class="product-price">₺230,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/frozen.webp" alt="Iced Latte">
@@ -541,7 +511,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="iced_filtre">İced Filtre Kahve</div>
+      <div class="product-name">İced Filtre Kahve</div>
       <div class="product-price">₺170,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/İced%20Filtre%20Kahve.webp" alt="Iced Latte">
@@ -549,7 +519,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="iced_caramel">İced Caramel Macchiato</div>
+      <div class="product-name">İced Caramel Macchiato</div>
       <div class="product-price">₺230,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Iced Latte">
@@ -557,8 +527,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="iced_aroma_latte">İced Aroma Latte</div>
-      <div class="product-desc" data-key="iced_aroma_latte_desc">Vanilya,karamel,tuzlu karamel,toffenut,çikolata,beyaz çikolata</div>
+      <div class="product-name">İced Aroma Latte</div>
+      <div class="product-desc">Vanilya,karamel,tuzlu karamel,toffenut,çikolata,beyaz çikolata</div>
       <div class="product-price">₺230,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Iced Latte">
@@ -566,7 +536,7 @@
 
 
   <div class="extras-link" onclick="goTo('extras')">
-  <span data-key="extras_link">+ Ekstra shot, vegan süt, şurup →</span>
+  + Ekstra shot, vegan süt, şurup →
   </div>
 </section>
 <div class="divider"></div>
@@ -578,11 +548,11 @@
 <section id="soft" class="section">
 
   <img class="section-img" src="soft/head.jpg" alt="Soft İçecekler">
-  <div class="section-title" data-key="cat_soft">Soft İçecekler</div>
+  <div class="section-title">Soft İçecekler</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="su">Su</div>
+      <div class="product-name">Su</div>
       <div class="product-price">₺50,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/su.webp" alt="Ayran">
@@ -590,7 +560,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="soda">Soda</div>
+      <div class="product-name">Soda</div>
       <div class="product-price">₺90,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/soda.webp" alt="soda">
@@ -598,8 +568,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="limonata">Limonata</div>
-      <div class="product-desc" data-key="limonata_desc">Ev yapımı</div>
+      <div class="product-name">Limonata</div>
+      <div class="product-desc">Ev yapımı</div>
       <div class="product-price">₺170,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/limonata.webp" alt="Limonata">
@@ -608,7 +578,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="nigde_gazozu">Niğde Gazozu</div>
+      <div class="product-name">Niğde Gazozu</div>
       <div class="product-price">₺130,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/Niğde%20Gazozu.webp" alt="Niğde Gazozu">
@@ -616,7 +586,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="schweppes">Schweppes</div>
+      <div class="product-name">Schweppes</div>
       <div class="product-price">₺130,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/Schweppes.webp" alt="Schweppes">
@@ -624,7 +594,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="churchill">Churchill</div>
+      <div class="product-name">Churchill</div>
       <div class="product-price">₺150,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/churcill.webp" alt="Ayran">
@@ -632,8 +602,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ice_tea">Ev Yapımı İce tea</div>
-       <div class="product-desc" data-key="ice_tea_desc">Mango ve Orman meyveleri seçenekleri ile</div>
+      <div class="product-name">Ev Yapımı İce tea</div>
+       <div class="product-desc">Mango ve Orman meyveleri seçenekleri ile</div>
       <div class="product-price">₺220,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/ice%20tea.webp" alt="Ayran">
@@ -641,7 +611,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="redbull">Redbull</div>
+      <div class="product-name">Redbull</div>
       <div class="product-price">₺150,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/redbull.webp" alt="redbull">
@@ -649,7 +619,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="coca_cola">Coca Cola</div>
+      <div class="product-name">Coca Cola</div>
       <div class="product-price">₺130,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/coca.webp" alt="coca">
@@ -657,7 +627,7 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="coca_cola_zero">Coca Cola Zero</div>
+      <div class="product-name">Coca Cola Zero</div>
       <div class="product-price">₺130,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/cocazero.webp" alt="cocazero">
@@ -665,8 +635,8 @@
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="meyve_suyu">%100 Meyve Suyu</div>
-      <div class="product-desc" data-key="meyve_suyu_desc">Elma ve portakal seçenekleri ile</div>
+      <div class="product-name">%100 Meyve Suyu</div>
+      <div class="product-desc">Elma ve portakal seçenekleri ile</div>
       <div class="product-price">₺160,00</div>
     </div>
     <img class="product-img" loading="lazy" src="soft/cappy.webp" alt="Ayran">
@@ -683,11 +653,11 @@
 <section id="atistirmalik" class="section">
 
   <img class="section-img" src="head/atistirmaliklar head.jpeg" alt="Atıştırmalıklar">
-  <div class="section-title" data-key="cat_atistirmalik">Atıştırmalıklar</div>
+  <div class="section-title">Atıştırmalıklar</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="kasarli_tost">Ekşi mayalı Kaşarlı tost</div>
+      <div class="product-name">Ekşi mayalı Kaşarlı tost</div>
       <div class="product-desc">Ekşi maya ile hazırlanmış
 Ayvalık ekmeği arasında eriyen kaşarın eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺290,00</div>
@@ -697,7 +667,7 @@ Ayvalık ekmeği arasında eriyen kaşarın eşsiz uyumu… Yanında Luvi’nin 
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="jambolu_tost">Ekşi mayalı Dana jambolu tost</div>
+      <div class="product-name">Ekşi mayalı Dana jambolu tost</div>
       <div class="product-desc">Ekşi maya ile hazırlanmış
 Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana jambonun  eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺360,00</div>
@@ -707,7 +677,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana jambonun  eş
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="sucuklu_tost">Ekşi mayalı kasap sucuklu tost</div>
+      <div class="product-name">Ekşi mayalı kasap sucuklu tost</div>
       <div class="product-desc">Ekşi maya ile hazırlanmış
 Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğun eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺380,00</div>
@@ -717,7 +687,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
     <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="uc_peynirli_tost">Ekşi mayalı 3 peynirli tost</div>
+      <div class="product-name">Ekşi mayalı 3 peynirli tost</div>
       <div class="product-desc">Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla cheedar peyniri ve beyaz peynirin eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺340,00</div>
     </div>
@@ -726,7 +696,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="jambolu_sandwich">Dana jambolu sandwich</div>
+      <div class="product-name">Dana jambolu sandwich</div>
       <div class="product-desc">Tahıllı panini ekmeği arasına cheedar peyniri ve Dana jambon ile hazırlanır. Sıcak servis edilir </div>
       <div class="product-price">₺320,00</div>
     </div>
@@ -735,7 +705,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="dort_peynirli_bagel">4 peynirli bagel sandwich</div>
+      <div class="product-name">4 peynirli bagel sandwich</div>
       <div class="product-desc">Susamlı bagel ekmeği arasına kurutulmuş domates ve peynir çeşitleri ile hazırlanır. Sıcak servis edilir. </div>
       <div class="product-price">₺240,00</div>
     </div>
@@ -752,12 +722,12 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 <section id="cay" class="section">
 
   <img class="section-img" src="cay/cayhead.png" alt="Çaylar">
-  <div class="section-title" data-key="cat_cay">Çaylar</div>
+  <div class="section-title">Çaylar</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="bitki_cayi">Bitki Çayları</div>
-      <div class="product-desc" data-key="bitki_cayi_desc">Rezene, Kış Çayı, Yeşil Çay, Papatya, Adaçayı, Ihlamur, Elma Tarçın, Hibiscus, Melisa, Mavi Kelebek Çayı</div>
+      <div class="product-name">Bitki Çayları</div>
+      <div class="product-desc">Rezene, Kış Çayı, Yeşil Çay, Papatya, Adaçayı, Ihlamur, Elma Tarçın, Hibiscus, Melisa, Mavi Kelebek Çayı</div>
       <div class="product-price">₺190,00</div>
     </div>
     <img class="product-img" loading="lazy" src="cay/bitki%20cayi.webp" alt="Bitki Çayları">
@@ -765,7 +735,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="cay_drink">Çay</div>
+      <div class="product-name">Çay</div>
       <div class="product-price">₺100,00</div>
     </div>
     <img class="product-img" loading="lazy" src="cay/cay.webp" alt="Çay Büyük">
@@ -782,11 +752,11 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 <section id="pizza" class="section">
 
   <img class="section-img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=50" alt="Pizzalar">
-  <div class="section-title" data-key="cat_pizza">Pizzalar</div>
+  <div class="section-title">Pizzalar</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="pizza_margarita">Margarita</div>
+      <div class="product-name">Margarita</div>
       <div class="product-desc">"72 saat boyunca ekşi maya ile mayalanmış özel pizza hamuru… İtalya’dan gelen San Marzano domatesleriyle hazırlanmış taban sosun üzerine eriyen mozzarella peyniri, Gökçeada’nın saf zeytinyağı ve taptaze roka ile servis edilir."</div>
       <div class="product-price">₺375,00</div>
     </div>
@@ -795,7 +765,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="pizza_vejeteryan">Vejeteryan</div>
+      <div class="product-name">Vejeteryan</div>
       <div class="product-desc">"." Mozarella peyniri ,mantar, yeşil biber ,dilim zeytin ve mısır taneleri ile hazırlanır.</div>
       <div class="product-price">₺425,00</div>
     </div>
@@ -804,7 +774,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="pizza_karisik">Karışık</div>
+      <div class="product-name">Karışık</div>
       <div class="product-desc">"." Mozarella peyniri ,dana kasap sucuk, dana sosis ,mantar, yeşil biber ,dilim zeytin ve mısır taneleri ile hazırlanır.</div>
       <div class="product-price">₺425,00</div>
     </div>
@@ -813,7 +783,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
    <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="pizza_3peynirli">3 Peynirli</div>
+      <div class="product-name">3 Peynirli</div>
       <div class="product-desc">"." Mozarella ,ezine peyniri,toz parmesan ve Gökçeada dağ kekiği ile benzersiz bir pizza. Gökçeada saf zeytinyağı ve taptaze roka ile servis edilir.</div>
       <div class="product-price">₺400,00</div>
     </div>
@@ -831,12 +801,12 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 <section id="tatli" class="section">
 
   <img class="section-img" src="head/tatlilar%20head.png" alt="Tatlılar">
-  <div class="section-title" data-key="cat_tatli">Tatlılar</div>
+  <div class="section-title">Tatlılar</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="cheesecake">Cheesecake</div>
-      <div class="product-desc" data-key="cheesecake_desc">Lotus,Orman meyveleri,Oreo,Limon seçenekleri mevsimsel olarak değişmektedir.</div>
+      <div class="product-name">Cheesecake</div>
+      <div class="product-desc">Lotus,Orman meyveleri,Oreo,Limon seçenekleri mevsimsel olarak değişmektedir.</div>
       <div class="product-price">₺300,00</div>
     </div>
     <img class="product-img" loading="lazy" src="tatlilar/cheescake.webp" alt="Cheesecake">
@@ -844,8 +814,8 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="mozaik_pasta">Mozaik Pasta</div>
-      <div class="product-desc" data-key="mozaik_pasta_desc">Çikolata sosu ile servis edilir.</div>
+      <div class="product-name">Mozaik Pasta</div>
+      <div class="product-desc">Çikolata sosu ile servis edilir.</div>
       <div class="product-price">₺210,00</div>
     </div>
     <img class="product-img" loading="lazy" src="tatlilar/mozaik.webp" alt="Tiramisu">
@@ -854,8 +824,8 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="marlenka">Marlenka</div>
-      <div class="product-desc" data-key="marlenka_desc">Ballı ve cevizli bir pastadır.Sıcak servis edilir.</div>
+      <div class="product-name">Marlenka</div>
+      <div class="product-desc">Ballı ve cevizli bir pastadır.Sıcak servis edilir.</div>
       <div class="product-price">₺280,00</div>
     </div>
     <img class="product-img" loading="lazy" src="tatlilar/marlenka.webp" alt="Tiramisu">
@@ -863,8 +833,8 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="marlenka_kakaolu">Marlenka Kakaolu</div>
-      <div class="product-desc" data-key="marlenka_kakaolu_desc">Ballı ve kakaolu bir pastadır.Sıcak servis edilir.</div>
+      <div class="product-name">Marlenka Kakaolu</div>
+      <div class="product-desc">Ballı ve kakaolu bir pastadır.Sıcak servis edilir.</div>
       <div class="product-price">₺280,00</div>
     </div>
     <img class="product-img" loading="lazy" src="tatlilar/kakaolu.webp" alt="Tiramisu">
@@ -872,7 +842,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="brownie">Brownie Beyaz Çıkolatalı</div>
+      <div class="product-name">Brownie Beyaz Çıkolatalı</div>
       <div class="product-desc">Bitter ve beyaz belçika çikolatası (Callebaut) ile hazırlanır.  Sıcak servis edilir.</div>
       <div class="product-price">₺290,00</div>
     </div>
@@ -881,7 +851,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="tiramisu">Tiramisu</div>
+      <div class="product-name">Tiramisu</div>
       <div class="product-desc">Mascarpone peyniri ve beyaz çikolatalı özel krema ve double espresso ile ıslatılmış italyan ladyfinger bisküviler ile hazırlanır.</div>
       <div class="product-price">₺290,00</div>
     </div>
@@ -890,7 +860,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="magnolya">Magnolya</div>
+      <div class="product-name">Magnolya</div>
       <div class="product-desc">Beyaz çikolatalı özel magnolya kreması ve taze çilekler ile hazırlanır.
 Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-price">₺290,00</div>
@@ -909,11 +879,11 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 <section id="kurabiye" class="section">
 
   <img class="section-img" src="head/cookies%20head.png" alt="Kurabiyeler">
-  <div class="section-title" data-key="cat_kurabiye">Kurabiyeler</div>
+  <div class="section-title">Kurabiyeler</div>
 
    <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="red_velvet">Red Velvet</div>
+      <div class="product-name">Red Velvet</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun sütlü ve beyaz kuvertür çikolata ile mükemmel uyumu.</div>
       <div class="product-price">₺200</div>
     </div>
@@ -922,7 +892,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="matcha_cookie">Matcha Cookie</div>
+      <div class="product-name">Matcha Cookie</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun beyaz kuvertür çikolata ve Japon matcha çayı ile mükemmel uyumu.</div>
       <div class="product-price">₺200</div>
     </div>
@@ -932,7 +902,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="findikli_kurabiye">Fındıklı Kurabiye</div>
+      <div class="product-name">Fındıklı Kurabiye</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun bitter kuvertür çikolata ve fındık ile mükemmel uyumu.</div>
       <div class="product-price">₺210</div>
     </div>
@@ -941,7 +911,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="lotuslu_kurabiye">Lotuslu Kurabiye</div>
+      <div class="product-name">Lotuslu Kurabiye</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun sütlü ve bitter kuvertür çikolata ile mükemmel uyumu lotus krema dolgusu ile taçlanmıştır</div>
       <div class="product-price">₺220</div>
     </div>
@@ -961,12 +931,12 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 <section id="salade" class="section">
 
   <img class="section-img" src="head/salata%20head.png" alt="Salatalar">
-  <div class="section-title" data-key="cat_salatalar">Salatalar</div>
+  <div class="section-title">Salatalar</div>
 
   <!-- PRODUIT — copie ce bloc pour ajouter une salade -->
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="hellim_salatasi">Hellim Salatası</div>
+      <div class="product-name">Hellim Salatası</div>
       <div class="product-desc">Izgara hellim peyniri,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
       <div class="product-price">₺325,00</div>
     </div>
@@ -975,7 +945,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="tavuk_salatasi">Tavuk Salatası</div>
+      <div class="product-name">Tavuk Salatası</div>
       <div class="product-desc">Tavuk göğüs eti,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
       <div class="product-price">₺350,00</div>
     </div>
@@ -985,7 +955,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 
   <div class="product">
     <div class="product-info">
-      <div class="product-name" data-key="ton_salatasi">Ton Salatası</div>
+      <div class="product-name">Ton Salatası</div>
       <div class="product-desc">Ton balığı,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
       <div class="product-price">₺375,00</div>
     </div>
@@ -1003,24 +973,24 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 <section id="extras" class="section">
 
   <img class="section-img" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=50" alt="Extras">
-  <div class="section-title" data-key="cat_extras">Extras</div>
+  <div class="section-title">Extras</div>
 
   <div class="extras-box">
-    <div class="extras-title" data-key="extras_title">Kahvenize ekleyin</div>
+    <div class="extras-title">Kahvenize ekleyin</div>
 
     <!-- EXTRA — copie ce bloc pour ajouter un extra -->
     <div class="extra-item">
-      <div class="extra-name" data-key="ekstra_shot">Ekstra Shot</div>
+      <div class="extra-name">Ekstra Shot</div>
       <div class="extra-price">₺60,00</div>
     </div>
 
     <div class="extra-item">
-      <div class="extra-name" data-key="vegan_sut">Vegan Süt</div>
+      <div class="extra-name">Vegan Süt</div>
       <div class="extra-price">₺50,00</div>
     </div>
 
     <div class="extra-item">
-      <div class="extra-name" data-key="surup">Şurup</div>
+      <div class="extra-name">Şurup</div>
       <div class="extra-price">₺40,00</div>
     </div>
 
@@ -1032,7 +1002,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 <!-- ══════════════════════════════════════
      FOOTER
      ══════════════════════════════════════ -->
-<div class="footer" data-key="footer">
+<div class="footer">
   Luvi Coffee · Tüm hakları saklıdır
 </div>
 
@@ -1065,284 +1035,6 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
   }
 
   window.addEventListener('scroll', updateActive, { passive: true });
-
-  const t = {
-    tr: {
-      cat_sicak:'Sıcak İçecekler',cat_soguk:'Soğuk İçecekler',cat_soft:'Soft İçecekler',
-      cat_atistirmalik:'Atıştırmalıklar',cat_cay:'Çaylar',cat_pizza:'Pizzalar',
-      cat_tatli:'Tatlılar',cat_kurabiye:'Kurabiyeler',cat_salatalar:'Salatalar',cat_extras:'Extras',
-      espresso:'Espresso',double_espresso:'Double Espresso',cortado:'Cortado',
-      turk_kahvesi:'Türk Kahvesi',turk_kahvesi_double:'Türk Kahvesi Double',
-      americano:'Americano',americano_sutlu:'Americano Sütlü',cappuccino:'Cappuccino',
-      vegan_sutlu:'Vegan Sütlü Kahve',vegan_sutlu_desc:'Badem sütü, yulaf sütü veya hindistan cevizi sütü ile',
-      latte:'Latte',flat_white:'Flat White',mocha:'Mocha',aroma_latte:'Aroma Latte',
-      matcha_latte:'Matcha Latte',chai_latte:'Chai Tea Latte',filtre_kahve:'Filtre Kahve',
-      sutlu_filtre:'Sütlü Filtre Kahve',salep:'Salep',
-      sicak_cikolata:'Sıcak Çikolata',sicak_cikolata_desc:'Callebaut Belçika çikolatası ile hazırlanır. Krem şanti ile servis edilir',
-      ice_latte:'İce Latte',ice_americano:'İce Americano',cold_brew:'Cold Brew',
-      ice_mocha:'İce Mocha',frappe:'Frappe',ice_matcha:'İce Matcha',
-      ice_strawberry_matcha:'İce Strawberry Matcha',ice_chai_latte:'İce Chai Latte',
-      milkshake:'Milkshake',milkshake_desc:'Çikolata ve çilek seçenekleri ile',
-      frozen:'Frozen',frozen_desc:'Çilek, mango, muz, orman meyveleri seçenekleri ile',
-      iced_filtre:'İced Filtre Kahve',iced_caramel:'İced Caramel Macchiato',
-      iced_aroma_latte:'İced Aroma Latte',iced_aroma_latte_desc:'Vanilya, karamel, tuzlu karamel, toffenut, çikolata, beyaz çikolata',
-      su:'Su',soda:'Soda',limonata:'Limonata',limonata_desc:'Ev yapımı',
-      nigde_gazozu:'Niğde Gazozu',schweppes:'Schweppes',churchill:'Churchill',
-      ice_tea:'Ev Yapımı İce Tea',ice_tea_desc:'Mango ve Orman meyveleri seçenekleri ile',
-      redbull:'Redbull',coca_cola:'Coca Cola',coca_cola_zero:'Coca Cola Zero',
-      meyve_suyu:'%100 Meyve Suyu',meyve_suyu_desc:'Elma ve portakal seçenekleri ile',
-      kasarli_tost:'Ekşi Mayalı Kaşarlı Tost',jambolu_tost:'Ekşi Mayalı Dana Jambolu Tost',
-      sucuklu_tost:'Ekşi Mayalı Kasap Sucuklu Tost',uc_peynirli_tost:'Ekşi Mayalı 3 Peynirli Tost',
-      jambolu_sandwich:'Dana Jambolu Sandwich',dort_peynirli_bagel:'4 Peynirli Bagel Sandwich',
-      bitki_cayi:'Bitki Çayları',bitki_cayi_desc:'Rezene, Kış Çayı, Yeşil Çay, Papatya, Adaçayı, Ihlamur, Elma Tarçın, Hibiscus, Melisa, Mavi Kelebek Çayı',
-      cay_drink:'Çay',
-      pizza_margarita:'Margarita',pizza_vejeteryan:'Vejeteryan',pizza_karisik:'Karışık',
-      pizza_3peynirli:'3 Peynirli',
-      cheesecake:'Cheesecake',cheesecake_desc:'Lotus, Orman meyveleri, Oreo, Limon seçenekleri mevsimsel olarak değişmektedir.',
-      mozaik_pasta:'Mozaik Pasta',mozaik_pasta_desc:'Çikolata sosu ile servis edilir.',
-      marlenka:'Marlenka',marlenka_desc:'Ballı ve cevizli bir pastadır. Sıcak servis edilir.',
-      marlenka_kakaolu:'Marlenka Kakaolu',marlenka_kakaolu_desc:'Ballı ve kakaolu bir pastadır. Sıcak servis edilir.',
-      brownie:'Brownie Beyaz Çıkolatalı',tiramisu:'Tiramisu',
-      magnolya:'Magnolya',
-      red_velvet:'Red Velvet',matcha_cookie:'Matcha Cookie',
-      findikli_kurabiye:'Fındıklı Kurabiye',lotuslu_kurabiye:'Lotuslu Kurabiye',
-      hellim_salatasi:'Hellim Salatası',tavuk_salatasi:'Tavuk Salatası',ton_salatasi:'Ton Salatası',
-      extras_title:'Kahvenize ekleyin',ekstra_shot:'Ekstra Shot',vegan_sut:'Vegan Süt',surup:'Şurup',
-      extras_link:'+ Ekstra shot, vegan süt, şurup →',
-      footer:'Luvi Coffee · Tüm hakları saklıdır',
-    },
-    en: {
-      cat_sicak:'Hot Drinks',cat_soguk:'Cold Drinks',cat_soft:'Soft Drinks',
-      cat_atistirmalik:'Snacks',cat_cay:'Teas',cat_pizza:'Pizzas',
-      cat_tatli:'Desserts',cat_kurabiye:'Cookies',cat_salatalar:'Salads',cat_extras:'Extras',
-      espresso:'Espresso',double_espresso:'Double Espresso',cortado:'Cortado',
-      turk_kahvesi:'Turkish Coffee',turk_kahvesi_double:'Turkish Coffee Double',
-      americano:'Americano',americano_sutlu:'Americano with Milk',cappuccino:'Cappuccino',
-      vegan_sutlu:'Vegan Milk Coffee',vegan_sutlu_desc:'With almond, oat or coconut milk',
-      latte:'Latte',flat_white:'Flat White',mocha:'Mocha',aroma_latte:'Aroma Latte',
-      matcha_latte:'Matcha Latte',chai_latte:'Chai Tea Latte',filtre_kahve:'Filter Coffee',
-      sutlu_filtre:'Filter Coffee with Milk',salep:'Salep',
-      sicak_cikolata:'Hot Chocolate',sicak_cikolata_desc:'Made with Callebaut Belgian chocolate. Served with whipped cream.',
-      ice_latte:'Iced Latte',ice_americano:'Iced Americano',cold_brew:'Cold Brew',
-      ice_mocha:'Iced Mocha',frappe:'Frappé',ice_matcha:'Iced Matcha',
-      ice_strawberry_matcha:'Iced Strawberry Matcha',ice_chai_latte:'Iced Chai Latte',
-      milkshake:'Milkshake',milkshake_desc:'Chocolate or strawberry',
-      frozen:'Frozen',frozen_desc:'Strawberry, mango, banana, forest fruits',
-      iced_filtre:'Iced Filter Coffee',iced_caramel:'Iced Caramel Macchiato',
-      iced_aroma_latte:'Iced Aroma Latte',iced_aroma_latte_desc:'Vanilla, caramel, salted caramel, toffeenut, chocolate, white chocolate',
-      su:'Water',soda:'Soda',limonata:'Lemonade',limonata_desc:'Homemade',
-      nigde_gazozu:'Niğde Soda',schweppes:'Schweppes',churchill:'Churchill',
-      ice_tea:'Homemade Iced Tea',ice_tea_desc:'Mango or forest fruits',
-      redbull:'Red Bull',coca_cola:'Coca Cola',coca_cola_zero:'Coca Cola Zero',
-      meyve_suyu:'100% Fruit Juice',meyve_suyu_desc:'Apple or orange',
-      kasarli_tost:'Sourdough Cheese Toast',jambolu_tost:'Sourdough Ham Toast',
-      sucuklu_tost:'Sourdough Sausage Toast',uc_peynirli_tost:'Sourdough 3-Cheese Toast',
-      jambolu_sandwich:'Ham Sandwich',dort_peynirli_bagel:'4-Cheese Bagel Sandwich',
-      bitki_cayi:'Herbal Teas',bitki_cayi_desc:'Fennel, Winter Tea, Green Tea, Chamomile, Sage, Linden, Apple Cinnamon, Hibiscus, Melissa, Blue Butterfly Pea',
-      cay_drink:'Tea',
-      pizza_margarita:'Margherita',pizza_vejeteryan:'Vegetarian',pizza_karisik:'Mixed',
-      pizza_3peynirli:'3 Cheese',
-      cheesecake:'Cheesecake',cheesecake_desc:'Lotus, Forest fruits, Oreo, Lemon — varies seasonally.',
-      mozaik_pasta:'Mosaic Cake',mozaik_pasta_desc:'Served with chocolate sauce.',
-      marlenka:'Marlenka',marlenka_desc:'Honey and walnut cake. Served warm.',
-      marlenka_kakaolu:'Marlenka Cocoa',marlenka_kakaolu_desc:'Honey and cocoa cake. Served warm.',
-      brownie:'White Chocolate Brownie',tiramisu:'Tiramisu',
-      magnolya:'Magnolia',
-      red_velvet:'Red Velvet Cookie',matcha_cookie:'Matcha Cookie',
-      findikli_kurabiye:'Hazelnut Cookie',lotuslu_kurabiye:'Lotus Cookie',
-      hellim_salatasi:'Halloumi Salad',tavuk_salatasi:'Chicken Salad',ton_salatasi:'Tuna Salad',
-      extras_title:'Add to your coffee',ekstra_shot:'Extra Shot',vegan_sut:'Vegan Milk',surup:'Syrup',
-      extras_link:'+ Extra shot, vegan milk, syrup →',
-      footer:'Luvi Coffee · All rights reserved',
-    },
-    de: {
-      cat_sicak:'Heiße Getränke',cat_soguk:'Kalte Getränke',cat_soft:'Softdrinks',
-      cat_atistirmalik:'Snacks',cat_cay:'Tees',cat_pizza:'Pizzen',
-      cat_tatli:'Desserts',cat_kurabiye:'Kekse',cat_salatalar:'Salate',cat_extras:'Extras',
-      espresso:'Espresso',double_espresso:'Doppelter Espresso',cortado:'Cortado',
-      turk_kahvesi:'Türkischer Kaffee',turk_kahvesi_double:'Türkischer Kaffee Doppelt',
-      americano:'Americano',americano_sutlu:'Americano mit Milch',cappuccino:'Cappuccino',
-      vegan_sutlu:'Veganer Milchkaffee',vegan_sutlu_desc:'Mit Mandel-, Hafer- oder Kokosmilch',
-      latte:'Latte',flat_white:'Flat White',mocha:'Mocha',aroma_latte:'Aroma Latte',
-      matcha_latte:'Matcha Latte',chai_latte:'Chai Tea Latte',filtre_kahve:'Filterkaffee',
-      sutlu_filtre:'Filterkaffee mit Milch',salep:'Salep',
-      sicak_cikolata:'Heiße Schokolade',sicak_cikolata_desc:'Mit Callebaut belgischer Schokolade. Mit Schlagsahne serviert.',
-      ice_latte:'Iced Latte',ice_americano:'Iced Americano',cold_brew:'Cold Brew',
-      ice_mocha:'Iced Mocha',frappe:'Frappé',ice_matcha:'Iced Matcha',
-      ice_strawberry_matcha:'Iced Erdbeer Matcha',ice_chai_latte:'Iced Chai Latte',
-      milkshake:'Milkshake',milkshake_desc:'Schokolade oder Erdbeere',
-      frozen:'Frozen',frozen_desc:'Erdbeere, Mango, Banane, Waldfrüchte',
-      iced_filtre:'Iced Filterkaffee',iced_caramel:'Iced Caramel Macchiato',
-      iced_aroma_latte:'Iced Aroma Latte',iced_aroma_latte_desc:'Vanille, Karamell, Salzkaramell, Toffeenut, Schokolade, weiße Schokolade',
-      su:'Wasser',soda:'Soda',limonata:'Limonade',limonata_desc:'Hausgemacht',
-      nigde_gazozu:'Niğde Sprudel',schweppes:'Schweppes',churchill:'Churchill',
-      ice_tea:'Hausgemachter Eistee',ice_tea_desc:'Mango oder Waldfrüchte',
-      redbull:'Red Bull',coca_cola:'Coca Cola',coca_cola_zero:'Coca Cola Zero',
-      meyve_suyu:'100% Fruchtsaft',meyve_suyu_desc:'Apfel oder Orange',
-      kasarli_tost:'Sauerteig Käsetoast',jambolu_tost:'Sauerteig Schinkentoast',
-      sucuklu_tost:'Sauerteig Wursttoast',uc_peynirli_tost:'Sauerteig 3-Käse-Toast',
-      jambolu_sandwich:'Schinkensandwich',dort_peynirli_bagel:'4-Käse Bagelsandwich',
-      bitki_cayi:'Kräutertees',bitki_cayi_desc:'Fenchel, Wintertee, Grüntee, Kamille, Salbei, Linde, Apfel-Zimt, Hibiskus, Melisse, Blaue Schmetterlingserbse',
-      cay_drink:'Tee',
-      pizza_margarita:'Margherita',pizza_vejeteryan:'Vegetarisch',pizza_karisik:'Gemischt',
-      pizza_3peynirli:'3 Käse',
-      cheesecake:'Cheesecake',cheesecake_desc:'Lotus, Waldfrüchte, Oreo, Zitrone — saisonal.',
-      mozaik_pasta:'Mosaiktorte',mozaik_pasta_desc:'Mit Schokoladensauce.',
-      marlenka:'Marlenka',marlenka_desc:'Honig-Walnuss-Torte. Warm serviert.',
-      marlenka_kakaolu:'Marlenka Kakao',marlenka_kakaolu_desc:'Honig-Kakao-Torte. Warm serviert.',
-      brownie:'Weiße Schokolade Brownie',tiramisu:'Tiramisu',
-      magnolya:'Magnolia',
-      red_velvet:'Red Velvet Keks',matcha_cookie:'Matcha Keks',
-      findikli_kurabiye:'Haselnusskeks',lotuslu_kurabiye:'Lotus Keks',
-      hellim_salatasi:'Halloumi Salat',tavuk_salatasi:'Hähnchensalat',ton_salatasi:'Thunfischsalat',
-      extras_title:'Zu Ihrem Kaffee',ekstra_shot:'Extra Shot',vegan_sut:'Vegane Milch',surup:'Sirup',
-      extras_link:'+ Extra Shot, vegane Milch, Sirup →',
-      footer:'Luvi Coffee · Alle Rechte vorbehalten',
-    },
-    ar: {
-      cat_sicak:'مشروبات ساخنة',cat_soguk:'مشروبات باردة',cat_soft:'مشروبات غازية',
-      cat_atistirmalik:'وجبات خفيفة',cat_cay:'شاي',cat_pizza:'بيتزا',
-      cat_tatli:'حلويات',cat_kurabiye:'كعك',cat_salatalar:'سلطات',cat_extras:'إضافات',
-      espresso:'إسبريسو',double_espresso:'دبل إسبريسو',cortado:'كورتادو',
-      turk_kahvesi:'قهوة تركية',turk_kahvesi_double:'قهوة تركية دبل',
-      americano:'أمريكانو',americano_sutlu:'أمريكانو بالحليب',cappuccino:'كابوتشينو',
-      vegan_sutlu:'قهوة بالحليب النباتي',vegan_sutlu_desc:'مع حليب اللوز أو الشوفان أو جوز الهند',
-      latte:'لاتيه',flat_white:'فلات وايت',mocha:'موكا',aroma_latte:'أروما لاتيه',
-      matcha_latte:'ماتشا لاتيه',chai_latte:'تشاي لاتيه',filtre_kahve:'قهوة مصفاة',
-      sutlu_filtre:'قهوة مصفاة بالحليب',salep:'سحلب',
-      sicak_cikolata:'شوكولاتة ساخنة',sicak_cikolata_desc:'بشوكولاتة بلجيكية كالابو. مع كريمة مخفوقة.',
-      ice_latte:'لاتيه مثلج',ice_americano:'أمريكانو مثلج',cold_brew:'كولد برو',
-      ice_mocha:'موكا مثلج',frappe:'فرابيه',ice_matcha:'ماتشا مثلجة',
-      ice_strawberry_matcha:'ماتشا فراولة مثلجة',ice_chai_latte:'تشاي لاتيه مثلج',
-      milkshake:'ميلك شيك',milkshake_desc:'شوكولاتة أو فراولة',
-      frozen:'فروزن',frozen_desc:'فراولة، مانغو، موز، توت بري',
-      iced_filtre:'قهوة مصفاة مثلجة',iced_caramel:'ماكياتو كراميل مثلج',
-      iced_aroma_latte:'أروما لاتيه مثلج',iced_aroma_latte_desc:'فانيليا، كراميل، كراميل مالح، توفي، شوكولاتة، شوكولاتة بيضاء',
-      su:'ماء',soda:'مياه غازية',limonata:'ليمونادا',limonata_desc:'محضر في المنزل',
-      nigde_gazozu:'مشروب نيده',schweppes:'شويبس',churchill:'تشرشل',
-      ice_tea:'شاي مثلج محلي',ice_tea_desc:'بالمانغو أو توت الغابة',
-      redbull:'ريد بول',coca_cola:'كوكا كولا',coca_cola_zero:'كوكا كولا زيرو',
-      meyve_suyu:'عصير طبيعي 100%',meyve_suyu_desc:'تفاح أو برتقال',
-      kasarli_tost:'توست بالجبن المخمر',jambolu_tost:'توست بالجبن والهام',
-      sucuklu_tost:'توست بالسجق',uc_peynirli_tost:'توست بثلاثة أجبان',
-      jambolu_sandwich:'ساندويش هام',dort_peynirli_bagel:'ساندويش بيغل بأربعة أجبان',
-      bitki_cayi:'شاي أعشاب',bitki_cayi_desc:'شمر، شاي شتوي، شاي أخضر، بابونج، مريمية، زيزفون، تفاح وقرفة، كركديه، ميليسا، بابيلون الأزرق',
-      cay_drink:'شاي',
-      pizza_margarita:'مارغريتا',pizza_vejeteryan:'نباتية',pizza_karisik:'مشكلة',
-      pizza_3peynirli:'ثلاثة أجبان',
-      cheesecake:'تشيزكيك',cheesecake_desc:'لوتس، توت الغابة، أوريو، ليمون — تتغير موسمياً.',
-      mozaik_pasta:'كيك فسيفساء',mozaik_pasta_desc:'مع صلصة الشوكولاتة.',
-      marlenka:'مارلينكا',marlenka_desc:'كيك بالعسل والجوز. يقدم ساخناً.',
-      marlenka_kakaolu:'مارلينكا بالكاكاو',marlenka_kakaolu_desc:'كيك بالعسل والكاكاو. يقدم ساخناً.',
-      brownie:'براوني شوكولاتة بيضاء',tiramisu:'تيراميسو',
-      magnolya:'مانوليا',
-      red_velvet:'كوكي ريد فيلفيت',matcha_cookie:'كوكي ماتشا',
-      findikli_kurabiye:'كوكي بالبندق',lotuslu_kurabiye:'كوكي لوتس',
-      hellim_salatasi:'سلطة الهالومي',tavuk_salatasi:'سلطة الدجاج',ton_salatasi:'سلطة التونة',
-      extras_title:'أضف إلى قهوتك',ekstra_shot:'شوت إضافي',vegan_sut:'حليب نباتي',surup:'شراب',
-      extras_link:'+ شوت، حليب نباتي، شراب →',
-      footer:'Luvi Coffee · جميع الحقوق محفوظة',
-    },
-    ru: {
-      cat_sicak:'Горячие напитки',cat_soguk:'Холодные напитки',cat_soft:'Безалкогольные',
-      cat_atistirmalik:'Закуски',cat_cay:'Чай',cat_pizza:'Пиццы',
-      cat_tatli:'Десерты',cat_kurabiye:'Печенье',cat_salatalar:'Салаты',cat_extras:'Добавки',
-      espresso:'Эспрессо',double_espresso:'Двойной эспрессо',cortado:'Кортадо',
-      turk_kahvesi:'Турецкий кофе',turk_kahvesi_double:'Турецкий кофе двойной',
-      americano:'Американо',americano_sutlu:'Американо с молоком',cappuccino:'Капучино',
-      vegan_sutlu:'Веганский кофе с молоком',vegan_sutlu_desc:'С миндальным, овсяным или кокосовым молоком',
-      latte:'Латте',flat_white:'Флэт Уайт',mocha:'Мокко',aroma_latte:'Арома Латте',
-      matcha_latte:'Матча Латте',chai_latte:'Чай Латте',filtre_kahve:'Фильтр кофе',
-      sutlu_filtre:'Фильтр кофе с молоком',salep:'Салеп',
-      sicak_cikolata:'Горячий шоколад',sicak_cikolata_desc:'Бельгийский шоколад Callebaut. Со взбитыми сливками.',
-      ice_latte:'Айс Латте',ice_americano:'Айс Американо',cold_brew:'Холодный брю',
-      ice_mocha:'Айс Мокко',frappe:'Фраппе',ice_matcha:'Айс Матча',
-      ice_strawberry_matcha:'Айс Клубничная Матча',ice_chai_latte:'Айс Чай Латте',
-      milkshake:'Молочный коктейль',milkshake_desc:'Шоколадный или клубничный',
-      frozen:'Фрозен',frozen_desc:'Клубника, манго, банан, лесные ягоды',
-      iced_filtre:'Айс фильтр кофе',iced_caramel:'Айс Карамельный Макиато',
-      iced_aroma_latte:'Айс Арома Латте',iced_aroma_latte_desc:'Ваниль, карамель, солёная карамель, тоффинат, шоколад, белый шоколад',
-      su:'Вода',soda:'Газировка',limonata:'Лимонад',limonata_desc:'Домашний',
-      nigde_gazozu:'Газировка Нигде',schweppes:'Швепс',churchill:'Черчилль',
-      ice_tea:'Домашний холодный чай',ice_tea_desc:'Манго или лесные ягоды',
-      redbull:'Ред Булл',coca_cola:'Кока-Кола',coca_cola_zero:'Кока-Кола Зеро',
-      meyve_suyu:'100% Фруктовый сок',meyve_suyu_desc:'Яблочный или апельсиновый',
-      kasarli_tost:'Тост с сыром на закваске',jambolu_tost:'Тост с ветчиной на закваске',
-      sucuklu_tost:'Тост с колбасой на закваске',uc_peynirli_tost:'Тост с тремя сырами',
-      jambolu_sandwich:'Сэндвич с ветчиной',dort_peynirli_bagel:'Бейгл с четырьмя сырами',
-      bitki_cayi:'Травяные чаи',bitki_cayi_desc:'Фенхель, зимний чай, зелёный чай, ромашка, шалфей, липа, яблоко с корицей, гибискус, мелисса, синий чай',
-      cay_drink:'Чай',
-      pizza_margarita:'Маргарита',pizza_vejeteryan:'Вегетарианская',pizza_karisik:'Смешанная',
-      pizza_3peynirli:'Три сыра',
-      cheesecake:'Чизкейк',cheesecake_desc:'Лотус, лесные ягоды, Орео, лимон — сезонно.',
-      mozaik_pasta:'Мозаичный торт',mozaik_pasta_desc:'С шоколадным соусом.',
-      marlenka:'Марленка',marlenka_desc:'Торт с мёдом и орехами. Тёплым.',
-      marlenka_kakaolu:'Марленка какао',marlenka_kakaolu_desc:'Торт с мёдом и какао. Тёплым.',
-      brownie:'Брауни с белым шоколадом',tiramisu:'Тирамису',
-      magnolya:'Магнолия',
-      red_velvet:'Ред Вельвет печенье',matcha_cookie:'Печенье Матча',
-      findikli_kurabiye:'Ореховое печенье',lotuslu_kurabiye:'Лотус печенье',
-      hellim_salatasi:'Салат с халуми',tavuk_salatasi:'Куриный салат',ton_salatasi:'Салат с тунцом',
-      extras_title:'Добавьте в кофе',ekstra_shot:'Доп. шот',vegan_sut:'Растительное молоко',surup:'Сироп',
-      extras_link:'+ Шот, растительное молоко, сироп →',
-      footer:'Luvi Coffee · Все права защищены',
-    },
-    fr: {
-      cat_sicak:'Boissons Chaudes',cat_soguk:'Boissons Froides',cat_soft:'Soft',
-      cat_atistirmalik:'Snacks',cat_cay:'Thés',cat_pizza:'Pizzas',
-      cat_tatli:'Desserts',cat_kurabiye:'Biscuits',cat_salatalar:'Salades',cat_extras:'Extras',
-      espresso:'Espresso',double_espresso:'Double Espresso',cortado:'Cortado',
-      turk_kahvesi:'Café Turc',turk_kahvesi_double:'Café Turc Double',
-      americano:'Americano',americano_sutlu:'Americano au lait',cappuccino:'Cappuccino',
-      vegan_sutlu:'Café lait vegan',vegan_sutlu_desc:'Lait d'amande, d'avoine ou de coco',
-      latte:'Latte',flat_white:'Flat White',mocha:'Mocha',aroma_latte:'Aroma Latte',
-      matcha_latte:'Matcha Latte',chai_latte:'Chai Tea Latte',filtre_kahve:'Café Filtre',
-      sutlu_filtre:'Café Filtre au lait',salep:'Salep',
-      sicak_cikolata:'Chocolat Chaud',sicak_cikolata_desc:'Chocolat belge Callebaut. Avec crème fouettée.',
-      ice_latte:'Latte Glacé',ice_americano:'Americano Glacé',cold_brew:'Cold Brew',
-      ice_mocha:'Mocha Glacé',frappe:'Frappé',ice_matcha:'Matcha Glacé',
-      ice_strawberry_matcha:'Matcha Fraise Glacé',ice_chai_latte:'Chai Latte Glacé',
-      milkshake:'Milkshake',milkshake_desc:'Chocolat ou fraise',
-      frozen:'Frozen',frozen_desc:'Fraise, mangue, banane, fruits des bois',
-      iced_filtre:'Café Filtre Glacé',iced_caramel:'Caramel Macchiato Glacé',
-      iced_aroma_latte:'Aroma Latte Glacé',iced_aroma_latte_desc:'Vanille, caramel, caramel salé, toffeenut, chocolat, chocolat blanc',
-      su:'Eau',soda:'Soda',limonata:'Limonade',limonata_desc:'Fait maison',
-      nigde_gazozu:'Soda Niğde',schweppes:'Schweppes',churchill:'Churchill',
-      ice_tea:'Thé Glacé Maison',ice_tea_desc:'Mangue ou fruits des bois',
-      redbull:'Red Bull',coca_cola:'Coca Cola',coca_cola_zero:'Coca Cola Zero',
-      meyve_suyu:'Jus 100% Naturel',meyve_suyu_desc:'Pomme ou orange',
-      kasarli_tost:'Toast fromage au levain',jambolu_tost:'Toast jambon au levain',
-      sucuklu_tost:'Toast saucisse au levain',uc_peynirli_tost:'Toast 3 fromages au levain',
-      jambolu_sandwich:'Sandwich au jambon',dort_peynirli_bagel:'Bagel 4 fromages',
-      bitki_cayi:'Tisanes',bitki_cayi_desc:'Fenouil, thé hivernal, thé vert, camomille, sauge, tilleul, pomme-cannelle, hibiscus, mélisse, pois papillon bleu',
-      cay_drink:'Thé',
-      pizza_margarita:'Margherita',pizza_vejeteryan:'Végétarienne',pizza_karisik:'Mixte',
-      pizza_3peynirli:'3 Fromages',
-      cheesecake:'Cheesecake',cheesecake_desc:'Lotus, fruits des bois, Oreo, citron — selon saison.',
-      mozaik_pasta:'Gâteau Mosaïque',mozaik_pasta_desc:'Avec sauce chocolat.',
-      marlenka:'Marlenka',marlenka_desc:'Gâteau miel et noix. Servi chaud.',
-      marlenka_kakaolu:'Marlenka Cacao',marlenka_kakaolu_desc:'Gâteau miel et cacao. Servi chaud.',
-      brownie:'Brownie Chocolat Blanc',tiramisu:'Tiramisu',
-      magnolya:'Magnolia',
-      red_velvet:'Cookie Red Velvet',matcha_cookie:'Cookie Matcha',
-      findikli_kurabiye:'Cookie Noisette',lotuslu_kurabiye:'Cookie Lotus',
-      hellim_salatasi:'Salade Halloumi',tavuk_salatasi:'Salade Poulet',ton_salatasi:'Salade Thon',
-      extras_title:'Ajoutez à votre café',ekstra_shot:'Shot Supplémentaire',vegan_sut:'Lait Vegan',surup:'Sirop',
-      extras_link:'+ Shot, lait vegan, sirop →',
-      footer:'Luvi Coffee · Tous droits réservés',
-    },
-  };
-
-  function setLang(lang) {
-    document.querySelectorAll('[data-key]').forEach(el => {
-      if (t[lang] && t[lang][el.dataset.key]) el.textContent = t[lang][el.dataset.key];
-    });
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('onclick').includes("'" + lang + "'"));
-    });
-    document.body.classList.toggle('rtl', lang === 'ar');
-  }
-
 </script>
 
 </body>
