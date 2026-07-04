@@ -10,12 +10,13 @@
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: smooth; }
 
-  /* Bloque le clic long sur les images produit uniquement */
+  /* Bloque le clic long (enregistrer l'image) mais autorise le clic simple (popup) */
   .product-img, .section-img {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     user-select: none;
     pointer-events: auto;
+    cursor: pointer;
   }
   /* Permet les clics sur boutons et drapeaux */
   button, .nav-btn, .lang-btn, .extras-link {
@@ -240,6 +241,35 @@
   .lang-btn img { width: 32px; height: 22px; display: block; border-radius: 3px; }
   body.rtl { direction: rtl; text-align: right; }
   body.rtl .product { flex-direction: row-reverse; }
+
+  /* ───── LIGHTBOX (popup image) ───── */
+  #lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  #lightbox.open { display: flex; }
+  #lightbox img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  }
+  #lightbox-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    color: #FAF6F0;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+  }
 </style>
 </head>
 <body>
@@ -284,7 +314,7 @@
      ══════════════════════════════════════ -->
 <section id="sicak" class="section">
 
-  <img class="section-img" src="sicak/head_image.jpg" loading="lazy" alt="Sıcak İçecekler">
+  <img class="section-img" src="sicak/head_image.jpg" loading="lazy" alt="Sıcak İçecekler" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_sicak">Sıcak İçecekler</div>
 
   <!-- PRODUIT — copie ce bloc pour ajouter un produit -->
@@ -293,7 +323,7 @@
       <div class="product-name" data-key="espresso">Espresso</div>
       <div class="product-price">₺130,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=120&q=40" alt="Espresso">
+    <img class="product-img" loading="lazy" src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?w=120&q=40" alt="Espresso" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -301,7 +331,7 @@
       <div class="product-name" data-key="double_espresso">Double espresso</div>
       <div class="product-price">₺180,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/double%20expresso.webp" alt="Double Espresso">
+    <img class="product-img" loading="lazy" src="sicak/double%20expresso.webp" alt="Double Espresso" onclick="openLightbox(this.src)">
   </div>
 
    <div class="product">
@@ -309,7 +339,7 @@
       <div class="product-name" data-key="cortado">Cortado</div>
       <div class="product-price">₺200,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/cortado.webp" alt="Sıcak Çikolata">
+    <img class="product-img" loading="lazy" src="sicak/cortado.webp" alt="Sıcak Çikolata" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -317,7 +347,7 @@
       <div class="product-name" data-key="turk_kahvesi">Türk Kahvesi</div>
       <div class="product-price">₺120,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Turk_Kahvesi.webp" alt="Turk Kahvesi">
+    <img class="product-img" loading="lazy" src="sicak/Turk_Kahvesi.webp" alt="Turk Kahvesi" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -325,7 +355,7 @@
       <div class="product-name" data-key="turk_kahvesi_double">Türk Kahvesi Double</div>
       <div class="product-price">₺180,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Turk_Kahvesi.webp" alt="Turk Kahvesi Double">
+    <img class="product-img" loading="lazy" src="sicak/Turk_Kahvesi.webp" alt="Turk Kahvesi Double" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -333,7 +363,7 @@
       <div class="product-name" data-key="americano">Americano</div>
       <div class="product-price">₺190,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Americano">
+    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Americano" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -341,7 +371,7 @@
       <div class="product-name" data-key="americano_sutlu">Americano Sütlü</div>
       <div class="product-price">₺200,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Americano Sütlü">
+    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Americano Sütlü" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -349,7 +379,7 @@
       <div class="product-name" data-key="cappuccino">Cappuccino</div>
       <div class="product-price">₺210,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Capuccino.webp" alt="Cappuccino">
+    <img class="product-img" loading="lazy" src="sicak/Capuccino.webp" alt="Cappuccino" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -358,7 +388,7 @@
       <div class="product-desc">Badem sütü ,yulaf sütü veya hindistan cevizi sütü ile</div>
       <div class="product-price">₺260,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Vegan Sütlü Kahve">
+    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Vegan Sütlü Kahve" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -366,7 +396,7 @@
       <div class="product-name" data-key="latte">Latte</div>
       <div class="product-price">₺210,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte">
+    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte" onclick="openLightbox(this.src)">
   </div>
 
    <div class="product">
@@ -374,7 +404,7 @@
       <div class="product-name" data-key="flat_white">Flat White</div>
       <div class="product-price">₺210,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte">
+    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte" onclick="openLightbox(this.src)">
   </div>
 
     <div class="product">
@@ -382,7 +412,7 @@
        <div class="product-name" data-key="mocha">Mocha</div>
       <div class="product-price">₺230,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte">
+    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Latte" onclick="openLightbox(this.src)">
   </div>
 
    <div class="product">
@@ -390,7 +420,7 @@
       <div class="product-name" data-key="aroma_latte">Aroma Latte</div>
       <div class="product-price">₺230,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Aroma Latte">
+    <img class="product-img" loading="lazy" src="sicak/Latte.webp" alt="Aroma Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -398,7 +428,7 @@
       <div class="product-name" data-key="matcha_latte">Matcha Latte</div>
       <div class="product-price">₺240,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Latte%20Matcha.webp" alt="Cappuccino">
+    <img class="product-img" loading="lazy" src="sicak/Latte%20Matcha.webp" alt="Cappuccino" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -406,7 +436,7 @@
       <div class="product-name" data-key="chai_latte">Chai Tea Latte</div>
       <div class="product-price">₺240,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Chai%20latte.webp" alt="Chai Tea Latte">
+    <img class="product-img" loading="lazy" src="sicak/Chai%20latte.webp" alt="Chai Tea Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -414,7 +444,7 @@
       <div class="product-name" data-key="filtre_kahve">Filtre Kahve</div>
       <div class="product-price">₺170,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Filtre Kahve">
+    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Filtre Kahve" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -422,7 +452,7 @@
       <div class="product-name" data-key="sutlu_filtre">Sütlü Filtre Kahve</div>
       <div class="product-price">₺180,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Sütlü Filtre Kahve">
+    <img class="product-img" loading="lazy" src="sicak/Americano.webp" alt="Sütlü Filtre Kahve" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -430,7 +460,7 @@
       <div class="product-name" data-key="salep">Salep</div>
       <div class="product-price">₺240,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Salep.webp" alt="Salep">
+    <img class="product-img" loading="lazy" src="sicak/Salep.webp" alt="Salep" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -439,7 +469,7 @@
       <div class="product-desc">Callebaut Belçika çikolatası ile hazırlanır. Krem şanti ile servis edilir</div>
       <div class="product-price">₺240,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="sicak/Sicak%20çikolata.webp" alt="Sıcak Çikolata">
+    <img class="product-img" loading="lazy" src="sicak/Sicak%20çikolata.webp" alt="Sıcak Çikolata" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -456,7 +486,7 @@
      ══════════════════════════════════════ -->
 <section id="soguk" class="section">
 
-  <img class="section-img" src="soguk/head_soguk.jpg" alt="Soğuk İçecekler">
+  <img class="section-img" src="soguk/head_soguk.jpg" alt="Soğuk İçecekler" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_soguk">Soğuk İçecekler</div>
 
   <div class="product">
@@ -464,7 +494,7 @@
       <div class="product-name" data-key="ice_latte">İce Latte</div>
       <div class="product-price">₺230,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Ice Latte">
+    <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Ice Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -472,7 +502,7 @@
       <div class="product-name" data-key="ice_americano">İce Americano</div>
       <div class="product-price">₺210,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/Americano.webp" alt="Iced Americano">
+    <img class="product-img" loading="lazy" src="soguk/Americano.webp" alt="Iced Americano" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -480,7 +510,7 @@
       <div class="product-name" data-key="cold_brew">Cold Brew</div>
       <div class="product-price">₺230,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/Americano.webp" alt="Cold Brew">
+    <img class="product-img" loading="lazy" src="soguk/Americano.webp" alt="Cold Brew" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -488,7 +518,7 @@
       <div class="product-name" data-key="ice_mocha">İce Mocha</div>
       <div class="product-price">₺260,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/Ice%20mocha.webp" alt="Ice Mocha">
+    <img class="product-img" loading="lazy" src="soguk/Ice%20mocha.webp" alt="Ice Mocha" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -496,7 +526,7 @@
       <div class="product-name" data-key="frappe">Frappe</div>
       <div class="product-price">₺240,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/frappe.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/frappe.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -504,7 +534,7 @@
       <div class="product-name" data-key="ice_matcha">İce Matcha</div>
       <div class="product-price">₺260,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/ice%20matcha.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/ice%20matcha.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -513,7 +543,7 @@
       <div class="product-name" data-key="ice_strawberry_matcha">İce Strawberry Matcha</div>
       <div class="product-price">₺260,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/İce Strawberry Matcha.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/İce Strawberry Matcha.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -521,7 +551,7 @@
       <div class="product-name" data-key="ice_chai_latte">İce Chai Latte</div>
       <div class="product-price">₺250,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/İce%20Chai%20Latte.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/İce%20Chai%20Latte.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -530,7 +560,7 @@
       <div class="product-desc">Çikolata ve çilek seçenekleri ile</div>
       <div class="product-price">₺260,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/milkshake.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/milkshake.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -539,7 +569,7 @@
       <div class="product-desc">Çilek,mango,muz,orman meyveleri seçenekleri ile</div>
       <div class="product-price">₺230,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/frozen.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/frozen.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -547,7 +577,7 @@
       <div class="product-name" data-key="iced_filtre">İced Filtre Kahve</div>
       <div class="product-price">₺190,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/İced%20Filtre%20Kahve.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/İced%20Filtre%20Kahve.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -555,7 +585,7 @@
       <div class="product-name" data-key="iced_caramel">İced Caramel Macchiato</div>
       <div class="product-price">₺250,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -564,7 +594,7 @@
       <div class="product-desc">Vanilya,karamel,tuzlu karamel,toffenut,çikolata,beyaz çikolata</div>
       <div class="product-price">₺250,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Iced Latte">
+    <img class="product-img" loading="lazy" src="soguk/Ice%20late.webp" alt="Iced Latte" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -580,7 +610,7 @@
      ══════════════════════════════════════ -->
 <section id="soft" class="section">
 
-  <img class="section-img" src="soft/head.jpg" alt="Soft İçecekler">
+  <img class="section-img" src="soft/head.jpg" alt="Soft İçecekler" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_soft">Soft İçecekler</div>
 
   <div class="product">
@@ -588,7 +618,7 @@
       <div class="product-name" data-key="su">Su</div>
       <div class="product-price">₺50,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/su.webp" alt="Ayran">
+    <img class="product-img" loading="lazy" src="soft/su.webp" alt="Ayran" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -596,7 +626,7 @@
       <div class="product-name" data-key="soda">Soda</div>
       <div class="product-price">₺120,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/soda.webp" alt="soda">
+    <img class="product-img" loading="lazy" src="soft/soda.webp" alt="soda" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -605,7 +635,7 @@
       <div class="product-desc">Ev yapımı</div>
       <div class="product-price">₺210,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/limonata.webp" alt="Limonata">
+    <img class="product-img" loading="lazy" src="soft/limonata.webp" alt="Limonata" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -614,7 +644,7 @@
       <div class="product-name" data-key="nigde_gazozu">Niğde Gazozu</div>
       <div class="product-price">₺140,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/Niğde%20Gazozu.webp" alt="Niğde Gazozu">
+    <img class="product-img" loading="lazy" src="soft/Niğde%20Gazozu.webp" alt="Niğde Gazozu" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -622,7 +652,7 @@
       <div class="product-name" data-key="schweppes">Schweppes</div>
       <div class="product-price">₺140,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/Schweppes.webp" alt="Schweppes">
+    <img class="product-img" loading="lazy" src="soft/Schweppes.webp" alt="Schweppes" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -630,7 +660,7 @@
       <div class="product-name" data-key="churchill">Churchill</div>
       <div class="product-price">₺160,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/churcill.webp" alt="Ayran">
+    <img class="product-img" loading="lazy" src="soft/churcill.webp" alt="Ayran" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -639,7 +669,7 @@
        <div class="product-desc">Mango ve Orman meyveleri seçenekleri ile</div>
       <div class="product-price">₺240,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/ice%20tea.webp" alt="Ayran">
+    <img class="product-img" loading="lazy" src="soft/ice%20tea.webp" alt="Ayran" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -647,7 +677,7 @@
       <div class="product-name" data-key="redbull">Redbull</div>
       <div class="product-price">₺160,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/redbull.webp" alt="redbull">
+    <img class="product-img" loading="lazy" src="soft/redbull.webp" alt="redbull" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -655,7 +685,7 @@
       <div class="product-name" data-key="coca_cola">Coca Cola</div>
       <div class="product-price">₺140,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/coca.webp" alt="coca">
+    <img class="product-img" loading="lazy" src="soft/coca.webp" alt="coca" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -663,7 +693,7 @@
       <div class="product-name" data-key="coca_cola_zero">Coca Cola Zero</div>
       <div class="product-price">₺140,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/cocazero.webp" alt="cocazero">
+    <img class="product-img" loading="lazy" src="soft/cocazero.webp" alt="cocazero" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -672,7 +702,7 @@
       <div class="product-desc">Elma ve portakal seçenekleri ile</div>
       <div class="product-price">₺180,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="soft/cappy.webp" alt="Ayran">
+    <img class="product-img" loading="lazy" src="soft/cappy.webp" alt="Ayran" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -685,7 +715,7 @@
      ══════════════════════════════════════ -->
 <section id="atistirmalik" class="section">
 
-  <img class="section-img" src="head/atistirmaliklar head.jpeg" alt="Atıştırmalıklar">
+  <img class="section-img" src="head/atistirmaliklar head.jpeg" alt="Atıştırmalıklar" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_atistirmalik">Atıştırmalıklar</div>
 
   <div class="product">
@@ -695,7 +725,7 @@
 Ayvalık ekmeği arasında eriyen kaşarın eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺320,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="atistirmaliklar/kasarli%20tost.webp" alt="Ekşi mayalı Kaşarlı tost">
+    <img class="product-img" loading="lazy" src="atistirmaliklar/kasarli%20tost.webp" alt="Ekşi mayalı Kaşarlı tost" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -705,7 +735,7 @@ Ayvalık ekmeği arasında eriyen kaşarın eşsiz uyumu… Yanında Luvi’nin 
 Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana jambonun  eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺380,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="atistirmaliklar/jambonlu%20tost.webp" alt="Ekşi mayalı Dana jambolu tost">
+    <img class="product-img" loading="lazy" src="atistirmaliklar/jambonlu%20tost.webp" alt="Ekşi mayalı Dana jambolu tost" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -715,7 +745,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana jambonun  eş
 Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğun eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺390,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="atistirmaliklar/sucuklu%20tost.webp" alt="Ekşi mayalı kasap sucuklu tost">
+    <img class="product-img" loading="lazy" src="atistirmaliklar/sucuklu%20tost.webp" alt="Ekşi mayalı kasap sucuklu tost" onclick="openLightbox(this.src)">
   </div>
 
     <div class="product">
@@ -724,7 +754,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla cheedar peyniri ve beyaz peynirin eşsiz uyumu… Yanında Luvi’nin imzası haline gelmiş az yağlı çıtır patates, özel balkan sos ve taptaze kornişon turşu ile servis edilir.</div>
       <div class="product-price">₺340,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="atistirmaliklar/3%20peynirli%20tost.webp" alt="Sandviç">
+    <img class="product-img" loading="lazy" src="atistirmaliklar/3%20peynirli%20tost.webp" alt="Sandviç" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -733,7 +763,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Tahıllı panini ekmeği arasına cheedar peyniri ve Dana jambon ile hazırlanır. Sıcak servis edilir </div>
       <div class="product-price">₺290,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="atistirmaliklar/jambonlu.webp" alt="Sandviç">
+    <img class="product-img" loading="lazy" src="atistirmaliklar/jambonlu.webp" alt="Sandviç" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -742,7 +772,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Susamlı bagel ekmeği arasına kurutulmuş domates ve peynir çeşitleri ile hazırlanır. Sıcak servis edilir. </div>
       <div class="product-price">₺260,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="atistirmaliklar/4%20peynirli.webp" alt="Sandviç">
+    <img class="product-img" loading="lazy" src="atistirmaliklar/4%20peynirli.webp" alt="Sandviç" onclick="openLightbox(this.src)">
   </div>
 
 </section>
@@ -754,7 +784,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
      ══════════════════════════════════════ -->
 <section id="cay" class="section">
 
-  <img class="section-img" src="cay/cayhead.png" alt="Çaylar">
+  <img class="section-img" src="cay/cayhead.png" alt="Çaylar" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_cay">Çaylar</div>
 
   <div class="product">
@@ -763,7 +793,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Rezene, Kış Çayı, Yeşil Çay, Papatya, Adaçayı, Ihlamur, Elma Tarçın, Hibiscus, Melisa, Mavi Kelebek Çayı</div>
       <div class="product-price">₺190,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="cay/bitki%20cayi.webp" alt="Bitki Çayları">
+    <img class="product-img" loading="lazy" src="cay/bitki%20cayi.webp" alt="Bitki Çayları" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -771,7 +801,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-name" data-key="cay_drink">Çay</div>
       <div class="product-price">₺100,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="cay/cay.webp" alt="Çay Büyük">
+    <img class="product-img" loading="lazy" src="cay/cay.webp" alt="Çay Büyük" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -784,7 +814,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
      ══════════════════════════════════════ -->
 <section id="pizza" class="section">
 
-  <img class="section-img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=50" alt="Pizzalar">
+  <img class="section-img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=50" alt="Pizzalar" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_pizza">Pizzalar</div>
 
   <div class="product">
@@ -793,7 +823,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">"72 saat boyunca ekşi maya ile mayalanmış özel pizza hamuru… İtalya’dan gelen San Marzano domatesleriyle hazırlanmış taban sosun üzerine eriyen mozzarella peyniri, Gökçeada’nın saf zeytinyağı ve taptaze roka ile servis edilir."</div>
       <div class="product-price">₺375,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="pizza/margarita.webp" alt="Margarita">
+    <img class="product-img" loading="lazy" src="pizza/margarita.webp" alt="Margarita" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -802,7 +832,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">"." Mozarella peyniri ,mantar, yeşil biber ,dilim zeytin ve mısır taneleri ile hazırlanır.</div>
       <div class="product-price">₺425,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="pizza/vejeteryan.webp" alt="Vejeteryan">
+    <img class="product-img" loading="lazy" src="pizza/vejeteryan.webp" alt="Vejeteryan" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -811,7 +841,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">"." Mozarella peyniri ,dana kasap sucuk, dana sosis ,mantar, yeşil biber ,dilim zeytin ve mısır taneleri ile hazırlanır.</div>
       <div class="product-price">₺495,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="pizza/karisik.webp" alt="Karışık Pizza">
+    <img class="product-img" loading="lazy" src="pizza/karisik.webp" alt="Karışık Pizza" onclick="openLightbox(this.src)">
   </div>
 
    <div class="product">
@@ -820,7 +850,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">"." Mozarella ,ezine peyniri,toz parmesan ve Gökçeada dağ kekiği ile benzersiz bir pizza. Gökçeada saf zeytinyağı ve taptaze roka ile servis edilir.</div>
       <div class="product-price">₺410,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="pizza/3 peynirli.webp" alt="Karışık Pizza">
+    <img class="product-img" loading="lazy" src="pizza/3 peynirli.webp" alt="Karışık Pizza" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -833,7 +863,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
      ══════════════════════════════════════ -->
 <section id="tatli" class="section">
 
-  <img class="section-img" src="head/tatlilar%20head.png" alt="Tatlılar">
+  <img class="section-img" src="head/tatlilar%20head.png" alt="Tatlılar" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_tatli">Tatlılar</div>
 
   <div class="product">
@@ -842,7 +872,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Lotus,Orman meyveleri,Oreo,Limon seçenekleri mevsimsel olarak değişmektedir.</div>
       <div class="product-price">₺320,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="tatlilar/cheescake.webp" alt="Cheesecake">
+    <img class="product-img" loading="lazy" src="tatlilar/cheescake.webp" alt="Cheesecake" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -851,7 +881,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Çikolata sosu ile servis edilir.</div>
       <div class="product-price">₺230,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="tatlilar/mozaik.webp" alt="Tiramisu">
+    <img class="product-img" loading="lazy" src="tatlilar/mozaik.webp" alt="Tiramisu" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -861,7 +891,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Ballı ve cevizli bir pastadır.Sıcak servis edilir.</div>
       <div class="product-price">₺290,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="tatlilar/marlenka.webp" alt="Tiramisu">
+    <img class="product-img" loading="lazy" src="tatlilar/marlenka.webp" alt="Tiramisu" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -870,7 +900,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Ballı ve kakaolu bir pastadır.Sıcak servis edilir.</div>
       <div class="product-price">₺290,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="tatlilar/kakaolu.webp" alt="Tiramisu">
+    <img class="product-img" loading="lazy" src="tatlilar/kakaolu.webp" alt="Tiramisu" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -879,7 +909,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Bitter ve beyaz belçika çikolatası (Callebaut) ile hazırlanır.  Sıcak servis edilir.</div>
       <div class="product-price">₺320,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="tatlilar/browni.webp" alt="Tiramisu">
+    <img class="product-img" loading="lazy" src="tatlilar/browni.webp" alt="Tiramisu" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -888,7 +918,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
       <div class="product-desc">Mascarpone peyniri ve beyaz çikolatalı özel krema ve double espresso ile ıslatılmış italyan ladyfinger bisküviler ile hazırlanır.</div>
       <div class="product-price">₺310,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="tatlilar/tiramisu.webp" alt="Tiramisu">
+    <img class="product-img" loading="lazy" src="tatlilar/tiramisu.webp" alt="Tiramisu" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -898,7 +928,7 @@ Ayvalık ekmeği arasında özel acuka sos ve eriyen kaşarla Dana kasap sucuğu
 Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-price">₺290,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="tatlilar/magnolya.webp" alt="Tiramisu">
+    <img class="product-img" loading="lazy" src="tatlilar/magnolya.webp" alt="Tiramisu" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -911,7 +941,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
      ══════════════════════════════════════ -->
 <section id="kurabiye" class="section">
 
-  <img class="section-img" src="head/cookies%20head.png" alt="Kurabiyeler">
+  <img class="section-img" src="head/cookies%20head.png" alt="Kurabiyeler" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_kurabiye">Kurabiyeler</div>
 
    <div class="product">
@@ -920,7 +950,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun sütlü ve beyaz kuvertür çikolata ile mükemmel uyumu.</div>
       <div class="product-price">₺200</div>
     </div>
-    <img class="product-img" loading="lazy" src="kurabiye/red%20velvet.webp" alt="Red Velvet">
+    <img class="product-img" loading="lazy" src="kurabiye/red%20velvet.webp" alt="Red Velvet" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -929,7 +959,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun beyaz kuvertür çikolata ve Japon matcha çayı ile mükemmel uyumu.</div>
       <div class="product-price">₺200</div>
     </div>
-    <img class="product-img" loading="lazy" src="kurabiye/matcha%20cookie.webp" alt="Matcha Cookie">
+    <img class="product-img" loading="lazy" src="kurabiye/matcha%20cookie.webp" alt="Matcha Cookie" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -939,7 +969,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun bitter kuvertür çikolata ve fındık ile mükemmel uyumu.</div>
       <div class="product-price">₺210</div>
     </div>
-    <img class="product-img" loading="lazy" src="kurabiye/findikli.webp" alt="Fındıklı Kurabiye">
+    <img class="product-img" loading="lazy" src="kurabiye/findikli.webp" alt="Fındıklı Kurabiye" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -948,7 +978,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-desc">Tereyağlı dışı kıtır içi akışkan kurabiye hamurunun sütlü ve bitter kuvertür çikolata ile mükemmel uyumu lotus krema dolgusu ile taçlanmıştır</div>
       <div class="product-price">₺220</div>
     </div>
-    <img class="product-img" loading="lazy" src="kurabiye/lotuslu.webp" alt="Tarçınlı Kurabiye">
+    <img class="product-img" loading="lazy" src="kurabiye/lotuslu.webp" alt="Tarçınlı Kurabiye" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -963,7 +993,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
      ══════════════════════════════════════ -->
 <section id="salade" class="section">
 
-  <img class="section-img" src="head/salata%20head.png" alt="Salatalar">
+  <img class="section-img" src="head/salata%20head.png" alt="Salatalar" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_salatalar">Salatalar</div>
 
   <!-- PRODUIT — copie ce bloc pour ajouter une salade -->
@@ -973,7 +1003,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-desc">Izgara hellim peyniri,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
       <div class="product-price">₺325,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="salatalar/hellim.webp" alt="Mevsim Salatası">
+    <img class="product-img" loading="lazy" src="salatalar/hellim.webp" alt="Mevsim Salatası" onclick="openLightbox(this.src)">
   </div>
 
   <div class="product">
@@ -982,7 +1012,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-desc">Tavuk göğüs eti,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
       <div class="product-price">₺350,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="salatalar/tavuk.webp" alt="Mevsim Salatası">
+    <img class="product-img" loading="lazy" src="salatalar/tavuk.webp" alt="Mevsim Salatası" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -992,7 +1022,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
       <div class="product-desc">Ton balığı,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
       <div class="product-price">₺375,00</div>
     </div>
-    <img class="product-img" loading="lazy" src="salatalar/ton.webp" alt="Mevsim Salatası">
+    <img class="product-img" loading="lazy" src="salatalar/ton.webp" alt="Mevsim Salatası" onclick="openLightbox(this.src)">
   </div>
 
 
@@ -1005,7 +1035,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
      ══════════════════════════════════════ -->
 <section id="extras" class="section">
 
-  <img class="section-img" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=50" alt="Extras">
+  <img class="section-img" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600&q=50" alt="Extras" onclick="openLightbox(this.src)">
   <div class="section-title" data-key="cat_extras">Extras</div>
 
   <div class="extras-box">
@@ -1039,6 +1069,14 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
   Luvi Coffee · Tüm hakları saklıdır
 </div>
 
+<!-- ══════════════════════════════════════
+     LIGHTBOX (popup image agrandie)
+     ══════════════════════════════════════ -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 
 <!-- ══════════════════════════════════════
      SCROLL SPY — ne pas modifier
@@ -1068,6 +1106,16 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
   }
 
   window.addEventListener('scroll', updateActive, { passive: true });
+
+  // ───── LIGHTBOX (popup image) : simple clic, pas d'appui long ─────
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.getElementById('lightbox-img').src = '';
+  }
 
   // TRADUCTIONS
   const t = {
