@@ -303,7 +303,6 @@
     <button class="nav-btn" onclick="goTo('pizza')" data-key="cat_pizza">Pizzalar</button>
     <button class="nav-btn" onclick="goTo('tatli')" data-key="cat_tatli">Tatlılar</button>
     <button class="nav-btn" onclick="goTo('kurabiye')" data-key="cat_kurabiye">Kurabiyeler</button>
-    <button class="nav-btn" onclick="goTo('salade')" data-key="cat_salatalar">Salatalar</button>
     <button class="nav-btn" onclick="goTo('extras')" data-key="cat_extras">Extras</button>
   </div>
 </nav>
@@ -989,48 +988,6 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
 <div class="divider"></div>
 
 <!-- ══════════════════════════════════════
-     SECTION SALATALAR
-     ══════════════════════════════════════ -->
-<section id="salade" class="section">
-
-  <img class="section-img" src="head/salata%20head.png" alt="Salatalar" onclick="openLightbox(this.src)">
-  <div class="section-title" data-key="cat_salatalar">Salatalar</div>
-
-  <!-- PRODUIT — copie ce bloc pour ajouter une salade -->
-  <div class="product">
-    <div class="product-info">
-      <div class="product-name" data-key="hellim_salatasi">Hellim Salatası</div>
-      <div class="product-desc">Izgara hellim peyniri,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
-      <div class="product-price">₺325,00</div>
-    </div>
-    <img class="product-img" loading="lazy" src="salatalar/hellim.webp" alt="Mevsim Salatası" onclick="openLightbox(this.src)">
-  </div>
-
-  <div class="product">
-    <div class="product-info">
-      <div class="product-name" data-key="tavuk_salatasi">Tavuk Salatası</div>
-      <div class="product-desc">Tavuk göğüs eti,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
-      <div class="product-price">₺350,00</div>
-    </div>
-    <img class="product-img" loading="lazy" src="salatalar/tavuk.webp" alt="Mevsim Salatası" onclick="openLightbox(this.src)">
-  </div>
-
-
-  <div class="product">
-    <div class="product-info">
-      <div class="product-name" data-key="ton_salatasi">Ton Salatası</div>
-      <div class="product-desc">Ton balığı,taze Akdeniz yeşillikleri,salatalık,Çeri domates ,Gökçeada zeytinyağı ve %100 doğal nar ekşisi ile hazırlanır.</div>
-      <div class="product-price">₺375,00</div>
-    </div>
-    <img class="product-img" loading="lazy" src="salatalar/ton.webp" alt="Mevsim Salatası" onclick="openLightbox(this.src)">
-  </div>
-
-
-</section>
-
-<div class="divider"></div>
-
-<!-- ══════════════════════════════════════
      SECTION EXTRAS
      ══════════════════════════════════════ -->
 <section id="extras" class="section">
@@ -1082,7 +1039,7 @@ Oreo , lotus ve red velvet seçenekleri vardır.</div>
      SCROLL SPY — ne pas modifier
      ══════════════════════════════════════ -->
 <script>
-  const sections = ['sicak','soguk','soft','atistirmalik','cay','pizza','tatli','kurabiye','salade','extras'];
+  const sections = ['sicak','soguk','soft','atistirmalik','cay','pizza','tatli','kurabiye','extras'];
   const btns = document.querySelectorAll('.nav-btn');
 
   function goTo(id) {
